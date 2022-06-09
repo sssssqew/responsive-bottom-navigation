@@ -1,103 +1,107 @@
 *{
-  margin: 0;
-  padding: 0;
+  margin: 0; padding: 0;
   box-sizing: border-box;
+  transition: all .2s linear;
   font-family: Arial, Helvetica, sans-serif;
-}
-body{
-  background: #222;
+  text-decoration: none;
 }
 .box-container{
-  width: 80%;
-  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKEMkRhkEcbG9kfxFe5FSGECou3C0DMOv4uA&usqp=CAU') no-repeat center;
+  background-size: cover;
 }
-.box{
-  max-width: 500px;
-  padding: 10px 20px;
-  margin: 60px 10px;
-  border: 2px solid #3498db;
+.box-container .box{
+  width: 700px;
+  display: flex;
+  align-items: center;
   border-radius: 10px;
+  box-shadow: 0 5px 15px #0009;
+  backdrop-filter: blur(5px);
+  background: rgba(255,255,255,.2);
+  overflow: hidden;
   position: relative;
 }
-.box-container .box:nth-child(odd){
-  margin-left: auto;
+.box-container .box .image{
+  padding: 60px;
+  margin-right: 40px;
+  border-radius: 0 50px 50px 0;
+  background: #fff2;
+  height: 270px;
 }
-.box-container .box h2{
-  font-size: 22px;
-  letter-spacing: 4px;
-  padding: 10px 0;
-  color: #2980b9;
+.box-container .box .image img{
+  height: 150px;
+  width: 150px;
+  border-radius: 0 50px 0 50px;
+  box-shadow: 0 0 0 10px #fff3;
 }
-.box-container .box p{
-  font-size: 15px;
-  padding-bottom: 15px;
-  color: #3498db;
-}
-.box-container .box i{
-  position: absolute;
-  top: -40px; right: -30px;
-  font-size: 25px;
-  background-color: #2980b9;
+.box-container .box .content .title{
   color: #fff;
-  border-radius: 50%;
-  width: 70px; height: 70px;
-  text-align: center;
-  line-height: 70px;
+  padding: 5px 0;
+  font-size: 33px;
+  text-transform: capitalize;
 }
-.box-container .box .year{
+.box-container .box .content .post{
+  display: block;
+  font-size: 20px;
+  color: #fff9;
+  margin-bottom: 30px;
+}
+.box-container .box .content a{
+  display: block;
+  color: #fff9;
+  font-size: 20px;
+}
+.box-container .box .content a:hover{
+  color: #fff;
+}
+.box-container .box .content a i{
+  color: #fff;
+  padding: 7px 5px;
+}
+.box-container .box .share{
   position: absolute;
-  bottom: -17px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #222;
-  color: #2980b9;
-  font-size: 30px;
-  padding: 0 15px;
+  top: 50%; right: 30px;
+  transform: translate(0, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff3;
+  border-radius: 50px;
+  height: 220px;
+  width: 45px;
 }
-.box-container .box:nth-child(2){
-  border-color: #c0392b;
+.box-container .box .share a{
+  margin: 15px;
+  color: #fff;
+  font-size: 23px;
 }
-.box-container .box:nth-child(2) h2{
-  color: #c0392b;
-}
-.box-container .box:nth-child(2) i{
-  background-color: #c0392b;
-}
-.box-container .box:nth-child(2) .year{
-  color: #c0392b;
-}
-.box-container .box:nth-child(2) p{
-  color: #c0392b;
+.box-container .box .share a:hover{
+  color: #fff6;
 }
 
-.box-container .box:nth-child(3){
-  border-color: #8244ad;
-}
-.box-container .box:nth-child(3) h2{
-  color: #8244ad;
-}
-.box-container .box:nth-child(3) i{
-  background-color: #8244ad;
-}
-.box-container .box:nth-child(3) .year{
-  color: #8244ad;
-}
-.box-container .box:nth-child(3) p{
-  color: #8244ad;
-}
-
-.box-container .box:nth-child(4){
-  border-color: #16a085;
-}
-.box-container .box:nth-child(4) h2{
-  color: #16a085;
-}
-.box-container .box:nth-child(4) i{
-  background-color: #16a085;
-}
-.box-container .box:nth-child(4) .year{
-  color: #16a085;
-}
-.box-container .box:nth-child(4) p{
-  color: #16a085;
+@media (max-width: 768px){
+  .box-container .box{
+    flex-direction: column;
+    padding-bottom: 100px;
+    margin: 20px;
+    width: 330px;
+  }
+  .box-container .box .image{
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+    border-radius: 0 0 50px 50px;
+    text-align: center;
+  }
+  .box-container .box .share{
+    left: 50%; top: 87%;
+    transform: translateX(-50%);
+    height: 45px;
+    width: 240px;
+    flex-direction: row;
+  }
 }
